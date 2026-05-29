@@ -6,44 +6,55 @@
 <title>DHURANDHAR CONTEST UPDATE</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fireGlow{0%,100%{text-shadow:0 0 8px #ff4500,0 0 16px #ff6a00}50%{text-shadow:0 0 16px #ff4500,0 0 32px #ff6a00,0 0 48px #ff2200}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes borderPulseRed{0%,100%{border-color:rgba(198,40,40,0.3)}50%{border-color:rgba(198,40,40,0.8)}}
 @keyframes rocketShake{0%,100%{transform:rotate(-2deg)}25%{transform:rotate(2deg)}50%{transform:rotate(-1deg)}75%{transform:rotate(1deg)}}
 @keyframes barGrow{from{width:0}}
 @keyframes fadeSlide{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
-@keyframes celebratePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,125,50,0.4)}50%{transform:scale(1.02);box-shadow:0 0 20px 5px rgba(46,125,50,0.1)}}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:100vh;overflow-x:hidden}
 .container{max-width:1100px;margin:0 auto;padding:0 16px 50px}
 
-.hero{background:linear-gradient(135deg,#ff4500 0%,#ff6a00 30%,#ff8c00 60%,#ffaa00 100%);margin:0;padding:36px 24px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(255,69,0,0.3)}
+/* HERO */
+.hero{background:linear-gradient(135deg,#ff4500 0%,#ff6a00 30%,#ff8c00 60%,#ffaa00 100%);margin:0;padding:32px 24px 24px;text-align:center;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(255,69,0,0.3)}
 .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.03) 20px,rgba(255,255,255,0.03) 40px)}
 .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:6px;background:linear-gradient(90deg,#ff4500,#ffaa00,#ff4500)}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:5px;padding:6px 28px;border-radius:30px;border:1px solid rgba(255,255,255,0.3);margin-bottom:14px;position:relative}
-.hero h1{font-family:'Oswald',sans-serif;font-size:48px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:3px;line-height:1;position:relative;text-shadow:0 2px 20px rgba(0,0,0,0.2)}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:5px;padding:6px 28px;border-radius:30px;border:1px solid rgba(255,255,255,0.3);margin-bottom:12px;position:relative}
+.hero h1{font-family:'Oswald',sans-serif;font-size:46px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:3px;line-height:1;position:relative;text-shadow:0 2px 20px rgba(0,0,0,0.2)}
 .hero h1 .fire{animation:fireGlow 2s infinite;display:inline-block}
-.hero .sub-title{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;color:rgba(255,255,255,0.95);letter-spacing:6px;margin-top:6px;position:relative}
-.hero .products{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,255,255,0.8);letter-spacing:2px;margin-top:12px;position:relative}
-.hero .tagline{font-family:'Oswald',sans-serif;font-size:17px;font-weight:500;color:#fff;margin-top:16px;position:relative;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);display:inline-block;padding:8px 30px;border-radius:8px}
+.hero .sub-title{font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;color:rgba(255,255,255,0.95);letter-spacing:6px;margin-top:5px;position:relative}
+.hero .products{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,255,255,0.8);letter-spacing:2px;margin-top:10px;position:relative}
+.hero .tagline{font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;color:#fff;margin-top:14px;position:relative;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);display:inline-block;padding:8px 30px;border-radius:8px}
+.hero .date-stamp{position:relative;margin-top:12px;display:inline-block;background:rgba(0,0,0,0.25);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;padding:5px 20px;border-radius:20px;border:1px solid rgba(255,255,255,0.2)}
 
-.scoreboard{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#1a1a2e}
-.sb-card{padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.08)}
+/* SLICER BAR */
+.slicer-bar{background:#1a1a2e;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
+.slicer-bar .slicer-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-right:6px}
+.slicer-btn{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;padding:7px 16px;border-radius:24px;border:1.5px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.25s ease;white-space:nowrap}
+.slicer-btn:hover{background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.3)}
+.slicer-btn.active{background:linear-gradient(135deg,#ff6a00,#ff8c00);color:#fff;border-color:#ff6a00;box-shadow:0 2px 12px rgba(255,106,0,0.4)}
+.slicer-btn.active-green{background:linear-gradient(135deg,#2e7d32,#43a047);border-color:#2e7d32;color:#fff;box-shadow:0 2px 12px rgba(46,125,50,0.4)}
+
+/* SCOREBOARD */
+.scoreboard{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#262644}
+.sb-card{padding:18px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.08)}
 .sb-card:last-child{border-right:none}
-.sb-card .sb-icon{font-size:22px;margin-bottom:4px}
-.sb-card .sb-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,0.45);margin-bottom:4px}
-.sb-card .sb-value{font-family:'Oswald',sans-serif;font-size:30px;font-weight:700;color:#fff;animation:countUp 0.8s ease both}
-.sb-card .sb-sub{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+.sb-card .sb-icon{font-size:20px;margin-bottom:3px}
+.sb-card .sb-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,0.45);margin-bottom:3px}
+.sb-card .sb-value{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:#fff;animation:countUp 0.8s ease both}
+.sb-card .sb-sub{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px}
 .sb-card:nth-child(1) .sb-value,.sb-card:nth-child(3) .sb-value{color:#ffaa00}
 .sb-card:nth-child(2) .sb-value,.sb-card:nth-child(4) .sb-value{color:#4ecdc4}
 
-.ticker-wrap{background:linear-gradient(90deg,#fff3e0,#fff8e1,#fff3e0);padding:10px 0;overflow:hidden;border-bottom:2px solid #ffe0b2}
+/* TICKER */
+.ticker-wrap{background:linear-gradient(90deg,#fff3e0,#fff8e1,#fff3e0);padding:9px 0;overflow:hidden;border-bottom:2px solid #ffe0b2}
 .ticker{display:flex;gap:40px;animation:tickerScroll 30s linear infinite;white-space:nowrap;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;color:#e65100;letter-spacing:1px}
-@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+/* SECTION HEADS */
 .sec-head{display:flex;align-items:center;gap:12px;margin:32px 0 16px;padding-bottom:10px;border-bottom:3px solid #ff6a00;position:relative}
 .sec-head::after{content:'';position:absolute;bottom:-3px;left:0;width:60px;height:3px;background:#1a1a2e}
 .sec-head .sec-emoji{font-size:28px}
@@ -53,21 +64,20 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 .sec-head-green::after{background:#1b5e20}
 .sec-head-green .sec-tag{color:#2e7d32;background:#e8f5e9}
 
+/* HOF */
 .hof-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-bottom:10px}
-.hof-card{border-radius:16px;padding:24px 18px;text-align:center;position:relative;overflow:hidden;animation:slideUp 0.6s ease both;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
-.hof-card:nth-child(1){animation-delay:0.1s}.hof-card:nth-child(2){animation-delay:0.25s}.hof-card:nth-child(3){animation-delay:0.4s}
+.hof-card{border-radius:16px;padding:22px 16px;text-align:center;position:relative;overflow:hidden;animation:slideUp 0.6s ease both;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
 .hof-gold{background:linear-gradient(145deg,#fff8e1,#fff3e0,#ffe0b2);border:2px solid #ffb300}
 .hof-silver{background:linear-gradient(145deg,#fafafa,#f5f5f5,#eee);border:2px solid #bdbdbd}
 .hof-bronze{background:linear-gradient(145deg,#fff3e0,#ffe0b2,#ffcc80);border:2px solid #e65100}
-.hof-card .hof-medal{font-size:48px;margin-bottom:4px}
+.hof-card .hof-medal{font-size:44px;margin-bottom:4px}
 .hof-card .hof-rank{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;font-weight:600}
-.hof-card .hof-name{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:#1a1a2e;margin:4px 0}
+.hof-card .hof-name{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;color:#1a1a2e;margin:4px 0}
 .hof-gold .hof-name{color:#e65100}
-.hof-card .hof-ach{font-family:'Oswald',sans-serif;font-size:36px;font-weight:800}
+.hof-card .hof-ach{font-family:'Oswald',sans-serif;font-size:34px;font-weight:800}
 .hof-gold .hof-ach{color:#ff6a00}.hof-silver .hof-ach{color:#757575}.hof-bronze .hof-ach{color:#bf360c}
-.hof-card .hof-detail{font-size:12px;color:#888;margin-top:6px;line-height:1.4}
-.hof-card .hof-crown{position:absolute;top:-4px;right:12px;font-size:26px;animation:rocketShake 1s ease infinite}
-
+.hof-card .hof-detail{font-size:12px;color:#888;margin-top:5px;line-height:1.4}
+.hof-card .hof-crown{position:absolute;top:-4px;right:12px;font-size:24px;animation:rocketShake 1s ease infinite}
 .hof-green-1{background:linear-gradient(145deg,#e8f5e9,#c8e6c9,#a5d6a7);border:2px solid #2e7d32}
 .hof-green-1 .hof-name{color:#1b5e20}.hof-green-1 .hof-ach{color:#2e7d32}
 .hof-green-2{background:linear-gradient(145deg,#f1f8e9,#dcedc8,#c5e1a5);border:2px solid #558b2f}
@@ -75,6 +85,7 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 .hof-green-3{background:linear-gradient(145deg,#e0f2f1,#b2dfdb,#80cbc4);border:2px solid #00796b}
 .hof-green-3 .hof-name{color:#004d40}.hof-green-3 .hof-ach{color:#00796b}
 
+/* TABLE */
 .tbl-wrap{border-radius:14px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,0.06);border:1px solid #eee}
 .tbl{width:100%;border-collapse:collapse;font-size:13px}
 .tbl thead th{font-family:'Barlow Condensed',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#fff;background:#1a1a2e;padding:11px 8px;text-align:center;white-space:nowrap}
@@ -82,6 +93,7 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 .tbl tbody td{padding:10px 8px;text-align:center;border-bottom:1px solid #f0f0f0;font-weight:500;font-size:13px}
 .tbl tbody td:first-child{text-align:left;padding-left:16px;font-weight:600}
 .tbl tbody tr:hover{background:#fff8f0}
+.tbl tbody tr.hidden-row{display:none}
 .tbl .zone-row{background:linear-gradient(90deg,#fff3e0,#fff8e1)!important;font-weight:700!important;border-top:2px solid #ffcc80;border-bottom:2px solid #ffcc80}
 .tbl .zone-row td{font-family:'Oswald',sans-serif;font-size:14px;color:#bf360c}
 .tbl .grand-row{background:linear-gradient(90deg,#1a1a2e,#2d2d4e)!important;border-top:3px solid #ff6a00}
@@ -93,60 +105,55 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 .tbl-eb .grand-row td{color:#a5d6a7!important}
 .tbl-eb tbody tr:hover{background:#f1f8e9}
 
-.hi{color:#2e7d32;font-weight:700}
-.md{color:#ef6c00;font-weight:600}
-.lo{color:#c62828;font-weight:700}
+.hi{color:#2e7d32;font-weight:700}.md{color:#ef6c00;font-weight:600}.lo{color:#c62828;font-weight:700}
 .crossed{background:#e8f5e9;color:#1b5e20;font-weight:800;border-radius:4px;padding:2px 6px}
 
+/* WARRIOR CARDS */
 .war-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.war-card{background:#fff;border-radius:14px;padding:18px 14px;display:flex;align-items:center;gap:12px;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform 0.2s,box-shadow 0.2s;animation:fadeSlide 0.5s ease both}
+.war-card{background:#fff;border-radius:14px;padding:16px 14px;display:flex;align-items:center;gap:12px;border:1px solid #eee;box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform 0.2s,box-shadow 0.2s;animation:fadeSlide 0.5s ease both}
 .war-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,106,0,0.12)}
-.war-card .we{font-size:32px;flex-shrink:0}
-.war-card .wi .wn{font-family:'Oswald',sans-serif;font-size:18px;font-weight:700;color:#1a1a2e}
-.war-card .wi .ws{font-size:11px;color:#999;margin-top:2px}
-.war-card .wa{margin-left:auto;font-family:'Oswald',sans-serif;font-size:26px;font-weight:800;color:#2e7d32;flex-shrink:0}
-.war-card-eb{border:1px solid #c8e6c9}
-.war-card-eb:hover{box-shadow:0 6px 20px rgba(46,125,50,0.12)}
+.war-card .we{font-size:30px;flex-shrink:0}.war-card .wi .wn{font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;color:#1a1a2e}.war-card .wi .ws{font-size:11px;color:#999;margin-top:2px}
+.war-card .wa{margin-left:auto;font-family:'Oswald',sans-serif;font-size:24px;font-weight:800;color:#2e7d32;flex-shrink:0}
+.war-card-eb{border:1px solid #c8e6c9}.war-card-eb:hover{box-shadow:0 6px 20px rgba(46,125,50,0.12)}
 
+/* ALERTS */
 .alert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.alert-card{background:#fff;border-radius:14px;padding:16px 14px;border:2px solid #ffcdd2;display:flex;align-items:center;gap:12px;animation:borderPulseRed 2s infinite}
-.alert-card .ae{font-size:28px;flex-shrink:0}
-.alert-card .ai .an{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:#c62828}
-.alert-card .ai .as{font-size:11px;color:#999;margin-top:2px}
-.alert-card .aa{margin-left:auto;font-family:'Oswald',sans-serif;font-size:22px;font-weight:800;color:#c62828;flex-shrink:0}
+.alert-card{background:#fff;border-radius:14px;padding:14px 12px;border:2px solid #ffcdd2;display:flex;align-items:center;gap:10px;animation:borderPulseRed 2s infinite}
+.alert-card .ae{font-size:26px;flex-shrink:0}.alert-card .ai .an{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;color:#c62828}.alert-card .ai .as{font-size:11px;color:#999;margin-top:2px}
+.alert-card .aa{margin-left:auto;font-family:'Oswald',sans-serif;font-size:20px;font-weight:800;color:#c62828;flex-shrink:0}
 
+/* RACE BARS */
 .race-list{display:flex;flex-direction:column;gap:10px}
 .race-row{display:flex;align-items:center;gap:14px}
 .race-row .rl{font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;width:120px;text-align:right;color:#1a1a2e;white-space:nowrap}
-.race-row .rb{flex:1;height:32px;background:#f5f5f5;border-radius:16px;overflow:hidden;position:relative}
+.race-row .rb{flex:1;height:32px;background:#f5f5f5;border-radius:16px;overflow:hidden}
 .race-row .rf{height:100%;border-radius:16px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:#fff;min-width:55px;animation:barGrow 1.2s ease both}
-.bg-fire{background:linear-gradient(90deg,#ff4500,#ff8c00)}
-.bg-green{background:linear-gradient(90deg,#2e7d32,#4caf50)}
-.bg-blue{background:linear-gradient(90deg,#1565c0,#42a5f5)}
-.bg-orange{background:linear-gradient(90deg,#e65100,#ff9800)}
-.bg-teal{background:linear-gradient(90deg,#00695c,#26a69a)}
-.bg-red{background:linear-gradient(90deg,#b71c1c,#ef5350)}
-.bg-gold{background:linear-gradient(90deg,#ff6a00,#ffaa00)}
-.bg-dgreen{background:linear-gradient(90deg,#1b5e20,#43a047)}
-.bg-lime{background:linear-gradient(90deg,#33691e,#8bc34a)}
+.bg-fire{background:linear-gradient(90deg,#ff4500,#ff8c00)}.bg-green{background:linear-gradient(90deg,#2e7d32,#4caf50)}.bg-blue{background:linear-gradient(90deg,#1565c0,#42a5f5)}.bg-orange{background:linear-gradient(90deg,#e65100,#ff9800)}.bg-teal{background:linear-gradient(90deg,#00695c,#26a69a)}.bg-red{background:linear-gradient(90deg,#b71c1c,#ef5350)}.bg-gold{background:linear-gradient(90deg,#ff6a00,#ffaa00)}.bg-dgreen{background:linear-gradient(90deg,#1b5e20,#43a047)}.bg-lime{background:linear-gradient(90deg,#33691e,#8bc34a)}
 
 .mega-divider{margin:48px 0 8px;text-align:center;position:relative}
 .mega-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#2e7d32,transparent)}
-.mega-divider .md-badge{position:relative;display:inline-block;background:#fff;padding:8px 32px;font-family:'Oswald',sans-serif;font-size:26px;font-weight:800;letter-spacing:3px;color:#1b5e20;border:3px solid #2e7d32;border-radius:14px}
+.mega-divider .md-badge{position:relative;display:inline-block;background:#fff;padding:8px 32px;font-family:'Oswald',sans-serif;font-size:24px;font-weight:800;letter-spacing:3px;color:#1b5e20;border:3px solid #2e7d32;border-radius:14px}
 
 .closing{margin-top:40px;text-align:center;padding:36px 24px;background:linear-gradient(135deg,#ff4500,#ff6a00,#ff8c00);position:relative;overflow:hidden}
 .closing::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.03) 20px,rgba(255,255,255,0.03) 40px)}
-.closing .cl-big{font-family:'Oswald',sans-serif;font-size:30px;font-weight:800;color:#fff;letter-spacing:2px;text-transform:uppercase;position:relative;text-shadow:0 2px 10px rgba(0,0,0,0.2)}
+.closing .cl-big{font-family:'Oswald',sans-serif;font-size:28px;font-weight:800;color:#fff;letter-spacing:2px;text-transform:uppercase;position:relative;text-shadow:0 2px 10px rgba(0,0,0,0.2)}
 .closing .cl-sub{position:relative;font-size:15px;color:rgba(255,255,255,0.9);margin-top:10px;line-height:1.6}
-.closing .cl-punch{position:relative;margin-top:18px;font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;color:#fff;background:rgba(255,255,255,0.15);display:inline-block;padding:10px 32px;border-radius:12px;border:1px solid rgba(255,255,255,0.3)}
+.closing .cl-punch{position:relative;margin-top:18px;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:#fff;background:rgba(255,255,255,0.15);display:inline-block;padding:10px 28px;border-radius:12px;border:1px solid rgba(255,255,255,0.3)}
 .closing .cl-hash{position:relative;display:inline-block;margin-top:16px;background:#fff;color:#ff4500;font-family:'Oswald',sans-serif;font-weight:700;font-size:13px;padding:6px 22px;border-radius:24px;letter-spacing:1px}
 
+/* FILTERABLE ITEMS */
+.filterable{transition:opacity 0.3s ease}
+.filterable.dim{opacity:0.15;pointer-events:none}
+.race-row.dim{opacity:0.15}
+
 @media(max-width:768px){
-  .hero h1{font-size:30px}
+  .hero h1{font-size:28px}
   .scoreboard{grid-template-columns:repeat(2,1fr)}
   .hof-row,.war-grid,.alert-grid{grid-template-columns:1fr}
   .tbl{font-size:11px}
   .race-row .rl{width:80px;font-size:12px}
+  .slicer-bar{padding:10px 8px;gap:6px}
+  .slicer-btn{font-size:11px;padding:5px 10px}
 }
 </style>
 </head>
@@ -158,7 +165,22 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
   <h1><span class="fire">🔥</span> DHURANDHAR CONTEST <span class="fire">🔥</span></h1>
   <div class="sub-title">🏆 BATTLE FOR LEADERSHIP 🏆</div>
   <div class="products">ME FACE WASH | SUN &nbsp;&nbsp;✕&nbsp;&nbsp; EMERGING BRAND SEC — NET VALUE</div>
-  <div class="tagline">🎯 "3 Regions Have Crossed 100% ME FW — The Race Is ON!" 🎯</div>
+  <div class="tagline">🎯 "3 Regions Crossed 100% ME FW — The Race Is ON!" 🎯</div>
+  <div class="date-stamp">📅 Updated Till: 29 May 2026</div>
+</div>
+
+<!-- SLICER BAR -->
+<div class="slicer-bar" id="slicerBar">
+  <span class="slicer-label">🎯 SELECT ZONE:</span>
+  <button class="slicer-btn active" data-zone="ALL" onclick="filterZone('ALL',this)">All Zones</button>
+  <button class="slicer-btn" data-zone="NORTH-1" onclick="filterZone('NORTH-1',this)">North-1</button>
+  <button class="slicer-btn" data-zone="NORTH-2" onclick="filterZone('NORTH-2',this)">North-2</button>
+  <button class="slicer-btn" data-zone="CENTRAL" onclick="filterZone('CENTRAL',this)">Central</button>
+  <button class="slicer-btn" data-zone="WEST-1" onclick="filterZone('WEST-1',this)">West-1</button>
+  <button class="slicer-btn" data-zone="WEST-2" onclick="filterZone('WEST-2',this)">West-2</button>
+  <button class="slicer-btn" data-zone="SOUTH-1" onclick="filterZone('SOUTH-1',this)">South-1</button>
+  <button class="slicer-btn" data-zone="SOUTH-2" onclick="filterZone('SOUTH-2',this)">South-2</button>
+  <button class="slicer-btn" data-zone="EAST" onclick="filterZone('EAST',this)">East</button>
 </div>
 
 <!-- SCOREBOARD -->
@@ -172,82 +194,81 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>🏆 SB SMASHES 122% ME FW — UNSTOPPABLE!</span>
-    <span>👑 UK/UPNCR AT 117% — SECOND CHAMPION!</span>
-    <span>🔥 CMH CROSSES 103% — TRIPLE CROWN!</span>
-    <span>💥 3 REGIONS NOW ABOVE 100%!</span>
-    <span>🌟 SB EB 177% — MEGA CHAMPION!</span>
-    <span>⚡ EAST ZONE EB 83% — DOMINATING!</span>
+    <span>🏆 SB 122% ME FW — UNSTOPPABLE!</span>
+    <span>👑 UK/UPNCR 117% — CHAMPION!</span>
+    <span>🔥 CMH 103% — TRIPLE CROWN!</span>
+    <span>💥 3 REGIONS ABOVE 100%!</span>
+    <span>🌟 SB EB 177% — MEGA LEGEND!</span>
+    <span>⚡ EAST EB 83% — DOMINATING!</span>
     <span>🚀 WEST-2 EB 77% — ON FIRE!</span>
-    <span>📈 ALL-INDIA ME FW HITS 50% — HALFWAY THERE!</span>
-    <span>💚 ALL-INDIA EB HITS 61% — STRONG!</span>
-    <span>🏆 SB SMASHES 122% ME FW — UNSTOPPABLE!</span>
-    <span>👑 UK/UPNCR AT 117% — SECOND CHAMPION!</span>
-    <span>🔥 CMH CROSSES 103% — TRIPLE CROWN!</span>
-    <span>💥 3 REGIONS NOW ABOVE 100%!</span>
-    <span>🌟 SB EB 177% — MEGA CHAMPION!</span>
-    <span>⚡ EAST ZONE EB 83% — DOMINATING!</span>
+    <span>📈 ALL-INDIA ME FW 50% — HALFWAY!</span>
+    <span>💚 ALL-INDIA EB 61% — STRONG!</span>
+    <span>🏆 SB 122% ME FW — UNSTOPPABLE!</span>
+    <span>👑 UK/UPNCR 117% — CHAMPION!</span>
+    <span>🔥 CMH 103% — TRIPLE CROWN!</span>
+    <span>💥 3 REGIONS ABOVE 100%!</span>
+    <span>🌟 SB EB 177% — MEGA LEGEND!</span>
   </div>
 </div>
 
 <div class="container">
 
-<!-- ████ PART 1: ME FACE WASH | SUN ████ -->
+<!-- ████ ME FACE WASH | SUN ████ -->
 
 <div class="sec-head"><span class="sec-emoji">🏆</span><h2>Hall of Fame — ME Face Wash Zone Champions</h2><span class="sec-tag">ME FW | SUN</span></div>
 <div class="hof-row">
-  <div class="hof-card hof-gold"><div class="hof-crown">👑</div><div class="hof-medal">🥇</div><div class="hof-rank">Zone Champion</div><div class="hof-name">EAST</div><div class="hof-ach">69%</div><div class="hof-detail">QTD: 483.3 | Target: 700 | BTG: 217<br>SB 122% 🏆 + NB 72% powering the zone!</div></div>
-  <div class="hof-card hof-silver"><div class="hof-medal">🥈</div><div class="hof-rank">Runner Up</div><div class="hof-name">WEST-2</div><div class="hof-ach">62%</div><div class="hof-detail">QTD: 720.8 | Target: 1165 | BTG: 444<br>CMH 103% 🏆 + SMH 55% rising!</div></div>
-  <div class="hof-card hof-bronze"><div class="hof-medal">🥉</div><div class="hof-rank">3rd Place</div><div class="hof-name">CENTRAL</div><div class="hof-ach">61%</div><div class="hof-detail">QTD: 546.1 | Target: 901 | BTG: 355<br>BIH 80% 🔥 + EUP 60% strong!</div></div>
+  <div class="hof-card hof-gold filterable" data-zone="EAST"><div class="hof-crown">👑</div><div class="hof-medal">🥇</div><div class="hof-rank">Zone Champion</div><div class="hof-name">EAST</div><div class="hof-ach">69%</div><div class="hof-detail">QTD: 483.3 | Target: 700 | BTG: 217<br>SB 122% 🏆 + NB 72% powering!</div></div>
+  <div class="hof-card hof-silver filterable" data-zone="WEST-2"><div class="hof-medal">🥈</div><div class="hof-rank">Runner Up</div><div class="hof-name">WEST-2</div><div class="hof-ach">62%</div><div class="hof-detail">QTD: 720.8 | Target: 1165 | BTG: 444<br>CMH 103% 🏆 leading the charge!</div></div>
+  <div class="hof-card hof-bronze filterable" data-zone="CENTRAL"><div class="hof-medal">🥉</div><div class="hof-rank">3rd Place</div><div class="hof-name">CENTRAL</div><div class="hof-ach">61%</div><div class="hof-detail">QTD: 546.1 | Target: 901 | BTG: 355<br>BIH 80% 🔥 + EUP 60% strong!</div></div>
 </div>
 
 <!-- ME FW TABLE -->
-<div class="sec-head"><span class="sec-emoji">📊</span><h2>ASM-Level Performance — ME Face Wash | Sun</h2><span class="sec-tag">Live Tracker</span></div>
+<div class="sec-head"><span class="sec-emoji">📊</span><h2>ASM-Level — ME Face Wash | Sun</h2><span class="sec-tag">Live Tracker</span></div>
 <div class="tbl-wrap">
-<table class="tbl">
+<table class="tbl" id="tblMeFw">
 <thead><tr><th>Region / ASM</th><th>QTR TGT</th><th>Apr-26</th><th>May-26</th><th>QTD</th><th>Ach%</th><th>BTG</th><th>🔥</th></tr></thead>
 <tbody>
-  <tr><td>🔸 DEL1</td><td>100</td><td>28.8</td><td>43.1</td><td>71.8</td><td class="hi">72%</td><td>28</td><td>🚀</td></tr>
-  <tr><td>🔸 DEL2</td><td>980</td><td>151.4</td><td>176.6</td><td>328.0</td><td class="lo">33%</td><td>652</td><td>⚠️</td></tr>
-  <tr><td>🔸 UK/UPNCR</td><td>160</td><td>98.0</td><td>89.1</td><td>187.1</td><td class="crossed">117%</td><td>-27 ✅</td><td>🏆👑</td></tr>
-  <tr><td>🔸 WUP</td><td>160</td><td>68.3</td><td>61.3</td><td>129.6</td><td class="hi">81%</td><td>30</td><td>🚀</td></tr>
-  <tr class="zone-row"><td>🟠 NORTH-1 TOTAL</td><td>1,400</td><td>346.5</td><td>370.1</td><td>716.5</td><td>51%</td><td>683</td><td>🔥</td></tr>
+  <tr data-zone="NORTH-1"><td>🔸 DEL1</td><td>100</td><td>28.8</td><td>43.1</td><td>71.8</td><td class="hi">72%</td><td>28</td><td>🚀</td></tr>
+  <tr data-zone="NORTH-1"><td>🔸 DEL2</td><td>980</td><td>151.4</td><td>176.6</td><td>328.0</td><td class="lo">33%</td><td>652</td><td>⚠️</td></tr>
+  <tr data-zone="NORTH-1"><td>🔸 UK/UPNCR</td><td>160</td><td>98.0</td><td>89.1</td><td>187.1</td><td class="crossed">117%</td><td>-27 ✅</td><td>🏆👑</td></tr>
+  <tr data-zone="NORTH-1"><td>🔸 WUP</td><td>160</td><td>68.3</td><td>61.3</td><td>129.6</td><td class="hi">81%</td><td>30</td><td>🚀</td></tr>
+  <tr class="zone-row" data-zone="NORTH-1"><td>🟠 NORTH-1 TOTAL</td><td>1,400</td><td>346.5</td><td>370.1</td><td>716.5</td><td>51%</td><td>683</td><td>🔥</td></tr>
 
-  <tr><td>🔸 HP/JK</td><td>169</td><td>36.0</td><td>30.5</td><td>66.5</td><td class="lo">39%</td><td>103</td><td>⚠️</td></tr>
-  <tr><td>🔸 PUN/ROH</td><td>564</td><td>61.6</td><td>94.4</td><td>156.0</td><td class="lo">28%</td><td>408</td><td>🚨</td></tr>
-  <tr><td>🔸 RAJ</td><td>467</td><td>91.0</td><td>213.9</td><td>304.9</td><td class="hi">65%</td><td>162</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟠 NORTH-2 TOTAL</td><td>1,200</td><td>188.6</td><td>338.8</td><td>527.4</td><td>44%</td><td>673</td><td>📈</td></tr>
+  <tr data-zone="NORTH-2"><td>🔸 HP/JK</td><td>169</td><td>36.0</td><td>30.5</td><td>66.5</td><td class="lo">39%</td><td>103</td><td>⚠️</td></tr>
+  <tr data-zone="NORTH-2"><td>🔸 PUN/ROH</td><td>564</td><td>61.6</td><td>94.4</td><td>156.0</td><td class="lo">28%</td><td>408</td><td>🚨</td></tr>
+  <tr data-zone="NORTH-2"><td>🔸 RAJ</td><td>467</td><td>91.0</td><td>213.9</td><td>304.9</td><td class="hi">65%</td><td>162</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="NORTH-2"><td>🟠 NORTH-2 TOTAL</td><td>1,200</td><td>188.6</td><td>338.8</td><td>527.4</td><td>44%</td><td>673</td><td>📈</td></tr>
 
-  <tr><td>🔸 BIH</td><td>200</td><td>77.9</td><td>81.8</td><td>159.7</td><td class="hi">80%</td><td>40</td><td>🚀🔥</td></tr>
-  <tr><td>🔸 CUP</td><td>307</td><td>61.9</td><td>86.2</td><td>148.1</td><td class="md">48%</td><td>159</td><td>🎯</td></tr>
-  <tr><td>🔸 EUP</td><td>395</td><td>126.7</td><td>111.7</td><td>238.3</td><td class="hi">60%</td><td>157</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟠 CENTRAL TOTAL</td><td>901</td><td>266.5</td><td>279.7</td><td>546.1</td><td>61%</td><td>355</td><td>🔥</td></tr>
+  <tr data-zone="CENTRAL"><td>🔸 BIH</td><td>200</td><td>77.9</td><td>81.8</td><td>159.7</td><td class="hi">80%</td><td>40</td><td>🚀🔥</td></tr>
+  <tr data-zone="CENTRAL"><td>🔸 CUP</td><td>307</td><td>61.9</td><td>86.2</td><td>148.1</td><td class="md">48%</td><td>159</td><td>🎯</td></tr>
+  <tr data-zone="CENTRAL"><td>🔸 EUP</td><td>395</td><td>126.7</td><td>111.7</td><td>238.3</td><td class="hi">60%</td><td>157</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="CENTRAL"><td>🟠 CENTRAL TOTAL</td><td>901</td><td>266.5</td><td>279.7</td><td>546.1</td><td>61%</td><td>355</td><td>🔥</td></tr>
 
-  <tr><td>🔸 GUJ</td><td>1,131</td><td>249.3</td><td>52.3</td><td>301.6</td><td class="lo">27%</td><td>829</td><td>⚠️</td></tr>
-  <tr><td>🔸 MUM</td><td>132</td><td>67.3</td><td>19.2</td><td>86.5</td><td class="hi">65%</td><td>46</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟠 WEST-1 TOTAL</td><td>1,263</td><td>316.6</td><td>71.5</td><td>388.0</td><td>31%</td><td>875</td><td>⚠️</td></tr>
+  <tr data-zone="WEST-1"><td>🔸 GUJ</td><td>1,131</td><td>249.3</td><td>52.3</td><td>301.6</td><td class="lo">27%</td><td>829</td><td>⚠️</td></tr>
+  <tr data-zone="WEST-1"><td>🔸 MUM</td><td>132</td><td>67.3</td><td>19.2</td><td>86.5</td><td class="hi">65%</td><td>46</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="WEST-1"><td>🟠 WEST-1 TOTAL</td><td>1,263</td><td>316.6</td><td>71.5</td><td>388.0</td><td>31%</td><td>875</td><td>⚠️</td></tr>
 
-  <tr><td>🔸 CG</td><td>286</td><td>55.7</td><td>92.4</td><td>148.1</td><td class="md">52%</td><td>138</td><td>📈</td></tr>
-  <tr><td>🔸 CMH</td><td>338</td><td>211.3</td><td>136.3</td><td>347.5</td><td class="crossed">103%</td><td>-10 ✅</td><td>🏆👑</td></tr>
-  <tr><td>🔸 MP</td><td>322</td><td>64.5</td><td>41.0</td><td>105.5</td><td class="lo">33%</td><td>217</td><td>⚠️</td></tr>
-  <tr><td>🔸 SMH</td><td>219</td><td>58.9</td><td>60.8</td><td>119.7</td><td class="md">55%</td><td>99</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟠 WEST-2 TOTAL</td><td>1,165</td><td>390.4</td><td>330.5</td><td>720.8</td><td>62%</td><td>444</td><td>🔥</td></tr>
+  <tr data-zone="WEST-2"><td>🔸 CG</td><td>286</td><td>55.7</td><td>92.4</td><td>148.1</td><td class="md">52%</td><td>138</td><td>📈</td></tr>
+  <tr data-zone="WEST-2"><td>🔸 CMH</td><td>338</td><td>211.3</td><td>136.3</td><td>347.5</td><td class="crossed">103%</td><td>-10 ✅</td><td>🏆👑</td></tr>
+  <tr data-zone="WEST-2"><td>🔸 MP</td><td>322</td><td>64.5</td><td>41.0</td><td>105.5</td><td class="lo">33%</td><td>217</td><td>⚠️</td></tr>
+  <tr data-zone="WEST-2"><td>🔸 SMH</td><td>219</td><td>58.9</td><td>60.8</td><td>119.7</td><td class="md">55%</td><td>99</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="WEST-2"><td>🟠 WEST-2 TOTAL</td><td>1,165</td><td>390.4</td><td>330.5</td><td>720.8</td><td>62%</td><td>444</td><td>🔥</td></tr>
 
-  <tr><td>🔸 APT</td><td>58</td><td>27.9</td><td>16.6</td><td>44.5</td><td class="hi">76%</td><td>14</td><td>🚀</td></tr>
-  <tr><td>🔸 KA</td><td>197</td><td>48.2</td><td>37.8</td><td>86.0</td><td class="md">44%</td><td>111</td><td>🎯</td></tr>
-  <tr class="zone-row"><td>🟠 SOUTH-1 TOTAL</td><td>255</td><td>76.1</td><td>54.4</td><td>130.5</td><td>51%</td><td>124</td><td>📈</td></tr>
+  <tr data-zone="SOUTH-1"><td>🔸 APT</td><td>58</td><td>27.9</td><td>16.6</td><td>44.5</td><td class="hi">76%</td><td>14</td><td>🚀</td></tr>
+  <tr data-zone="SOUTH-1"><td>🔸 KA</td><td>197</td><td>48.2</td><td>37.8</td><td>86.0</td><td class="md">44%</td><td>111</td><td>🎯</td></tr>
+  <tr class="zone-row" data-zone="SOUTH-1"><td>🟠 SOUTH-1 TOTAL</td><td>255</td><td>76.1</td><td>54.4</td><td>130.5</td><td>51%</td><td>124</td><td>📈</td></tr>
 
-  <tr><td>🔸 KER</td><td>373</td><td>74.8</td><td>54.8</td><td>129.5</td><td class="lo">35%</td><td>244</td><td>⚠️</td></tr>
-  <tr><td>🔸 TN</td><td>222</td><td>44.8</td><td>46.4</td><td>91.2</td><td class="md">41%</td><td>131</td><td>🎯</td></tr>
-  <tr class="zone-row"><td>🟠 SOUTH-2 TOTAL</td><td>595</td><td>119.6</td><td>101.1</td><td>220.7</td><td>37%</td><td>374</td><td>⚠️</td></tr>
+  <tr data-zone="SOUTH-2"><td>🔸 KER</td><td>373</td><td>74.8</td><td>54.8</td><td>129.5</td><td class="lo">35%</td><td>244</td><td>⚠️</td></tr>
+  <tr data-zone="SOUTH-2"><td>🔸 TN</td><td>222</td><td>44.8</td><td>46.4</td><td>91.2</td><td class="md">41%</td><td>131</td><td>🎯</td></tr>
+  <tr class="zone-row" data-zone="SOUTH-2"><td>🟠 SOUTH-2 TOTAL</td><td>595</td><td>119.6</td><td>101.1</td><td>220.7</td><td>37%</td><td>374</td><td>⚠️</td></tr>
 
-  <tr><td>🔸 JH/OD</td><td>187</td><td>53.1</td><td>59.1</td><td>112.3</td><td class="hi">60%</td><td>74</td><td>📈</td></tr>
-  <tr><td>🔸 NB</td><td>85</td><td>29.1</td><td>32.6</td><td>61.7</td><td class="hi">72%</td><td>23</td><td>🚀</td></tr>
-  <tr><td>🔸 NESA</td><td>266</td><td>56.3</td><td>54.6</td><td>111.0</td><td class="md">42%</td><td>155</td><td>🎯</td></tr>
-  <tr><td>🔸 SB</td><td>162</td><td>106.7</td><td>91.6</td><td>198.3</td><td class="crossed">122%</td><td>-36 ✅</td><td>🏆👑</td></tr>
-  <tr class="zone-row"><td>🟠 EAST TOTAL</td><td>700</td><td>245.3</td><td>237.9</td><td>483.3</td><td>69%</td><td>217</td><td>🔥🔥</td></tr>
+  <tr data-zone="EAST"><td>🔸 JH/OD</td><td>187</td><td>53.1</td><td>59.1</td><td>112.3</td><td class="hi">60%</td><td>74</td><td>📈</td></tr>
+  <tr data-zone="EAST"><td>🔸 NB</td><td>85</td><td>29.1</td><td>32.6</td><td>61.7</td><td class="hi">72%</td><td>23</td><td>🚀</td></tr>
+  <tr data-zone="EAST"><td>🔸 NESA</td><td>266</td><td>56.3</td><td>54.6</td><td>111.0</td><td class="md">42%</td><td>155</td><td>🎯</td></tr>
+  <tr data-zone="EAST"><td>🔸 SB</td><td>162</td><td>106.7</td><td>91.6</td><td>198.3</td><td class="crossed">122%</td><td>-36 ✅</td><td>🏆👑</td></tr>
+  <tr class="zone-row" data-zone="EAST"><td>🟠 EAST TOTAL</td><td>700</td><td>245.3</td><td>237.9</td><td>483.3</td><td>69%</td><td>217</td><td>🔥🔥</td></tr>
 
-  <tr class="grand-row"><td>🏆 GRAND TOTAL</td><td>7,479</td><td>1,949.5</td><td>1,783.9</td><td>3,733.4</td><td>50%</td><td>3,746</td><td>🔥🔥</td></tr>
+  <tr class="grand-row" data-zone="GRAND"><td>🏆 GRAND TOTAL</td><td>7,479</td><td>1,949.5</td><td>1,783.9</td><td>3,733.4</td><td>50%</td><td>3,746</td><td>🔥🔥</td></tr>
 </tbody>
 </table>
 </div>
@@ -255,98 +276,97 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 <!-- ME FW WARRIORS -->
 <div class="sec-head"><span class="sec-emoji">⚔️</span><h2>Top Warriors — ME Face Wash</h2><span class="sec-tag">Champions in Action</span></div>
 <div class="war-grid">
-  <div class="war-card"><div class="we">👑</div><div class="wi"><div class="wn">SB</div><div class="ws">EAST · 122% SMASHED! LEGEND!</div></div><div class="wa">122%</div></div>
-  <div class="war-card"><div class="we">🏆</div><div class="wi"><div class="wn">UK/UPNCR</div><div class="ws">NORTH-1 · 117% — Back-to-back champ!</div></div><div class="wa">117%</div></div>
-  <div class="war-card"><div class="we">🔥</div><div class="wi"><div class="wn">CMH</div><div class="ws">WEST-2 · 103% — JUST CROSSED!</div></div><div class="wa">103%</div></div>
-  <div class="war-card"><div class="we">🚀</div><div class="wi"><div class="wn">WUP</div><div class="ws">NORTH-1 · 81% — BTG just 30!</div></div><div class="wa">81%</div></div>
-  <div class="war-card"><div class="we">⚡</div><div class="wi"><div class="wn">BIH</div><div class="ws">CENTRAL · 80% — BTG only 40!</div></div><div class="wa">80%</div></div>
-  <div class="war-card"><div class="we">💪</div><div class="wi"><div class="wn">APT</div><div class="ws">SOUTH-1 · 76% — BTG just 14!</div></div><div class="wa">76%</div></div>
+  <div class="war-card filterable" data-zone="EAST"><div class="we">👑</div><div class="wi"><div class="wn">SB</div><div class="ws">EAST · 122% SMASHED!</div></div><div class="wa">122%</div></div>
+  <div class="war-card filterable" data-zone="NORTH-1"><div class="we">🏆</div><div class="wi"><div class="wn">UK/UPNCR</div><div class="ws">NORTH-1 · 117% CROSSED!</div></div><div class="wa">117%</div></div>
+  <div class="war-card filterable" data-zone="WEST-2"><div class="we">🔥</div><div class="wi"><div class="wn">CMH</div><div class="ws">WEST-2 · 103% JUST CROSSED!</div></div><div class="wa">103%</div></div>
+  <div class="war-card filterable" data-zone="NORTH-1"><div class="we">🚀</div><div class="wi"><div class="wn">WUP</div><div class="ws">NORTH-1 · 81% BTG 30!</div></div><div class="wa">81%</div></div>
+  <div class="war-card filterable" data-zone="CENTRAL"><div class="we">⚡</div><div class="wi"><div class="wn">BIH</div><div class="ws">CENTRAL · 80% BTG 40!</div></div><div class="wa">80%</div></div>
+  <div class="war-card filterable" data-zone="SOUTH-1"><div class="we">💪</div><div class="wi"><div class="wn">APT</div><div class="ws">SOUTH-1 · 76% BTG 14!</div></div><div class="wa">76%</div></div>
 </div>
 
 <!-- ME FW ALERTS -->
 <div class="sec-head"><span class="sec-emoji">🚨</span><h2>Need Acceleration — ME Face Wash</h2><span class="sec-tag">Red Alert</span></div>
 <div class="alert-grid">
-  <div class="alert-card"><div class="ae">🚨</div><div class="ai"><div class="an">GUJ</div><div class="as">WEST-1 · TGT 1131, QTD 301 — BTG 829!</div></div><div class="aa">27%</div></div>
-  <div class="alert-card"><div class="ae">🚨</div><div class="ai"><div class="an">PUN/ROH</div><div class="as">NORTH-2 · TGT 564, huge gap</div></div><div class="aa">28%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">DEL2</div><div class="as">NORTH-1 · TGT 980, BTG 652</div></div><div class="aa">33%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">MP</div><div class="as">WEST-2 · TGT 322, Ach 33%</div></div><div class="aa">33%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">KER</div><div class="as">SOUTH-2 · TGT 373, BTG 244</div></div><div class="aa">35%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">HP/JK</div><div class="as">NORTH-2 · TGT 169, Ach 39%</div></div><div class="aa">39%</div></div>
+  <div class="alert-card filterable" data-zone="WEST-1"><div class="ae">🚨</div><div class="ai"><div class="an">GUJ</div><div class="as">WEST-1 · TGT 1131, BTG 829</div></div><div class="aa">27%</div></div>
+  <div class="alert-card filterable" data-zone="NORTH-2"><div class="ae">🚨</div><div class="ai"><div class="an">PUN/ROH</div><div class="as">NORTH-2 · TGT 564, BTG 408</div></div><div class="aa">28%</div></div>
+  <div class="alert-card filterable" data-zone="NORTH-1"><div class="ae">⚠️</div><div class="ai"><div class="an">DEL2</div><div class="as">NORTH-1 · TGT 980, BTG 652</div></div><div class="aa">33%</div></div>
+  <div class="alert-card filterable" data-zone="WEST-2"><div class="ae">⚠️</div><div class="ai"><div class="an">MP</div><div class="as">WEST-2 · TGT 322, Ach 33%</div></div><div class="aa">33%</div></div>
+  <div class="alert-card filterable" data-zone="SOUTH-2"><div class="ae">⚠️</div><div class="ai"><div class="an">KER</div><div class="as">SOUTH-2 · TGT 373, BTG 244</div></div><div class="aa">35%</div></div>
+  <div class="alert-card filterable" data-zone="NORTH-2"><div class="ae">⚠️</div><div class="ai"><div class="an">HP/JK</div><div class="as">NORTH-2 · TGT 169, Ach 39%</div></div><div class="aa">39%</div></div>
 </div>
 
 <!-- ME FW RACE -->
 <div class="sec-head"><span class="sec-emoji">🏁</span><h2>Race to Finish — ME Face Wash Zones</h2><span class="sec-tag">Final Sprint</span></div>
-<div class="race-list">
-  <div class="race-row"><div class="rl">🥇 EAST</div><div class="rb"><div class="rf bg-fire" style="width:69%">69%</div></div><div class="rp">🔥</div></div>
-  <div class="race-row"><div class="rl">🥈 WEST-2</div><div class="rb"><div class="rf bg-orange" style="width:62%">62%</div></div><div class="rp">🚀</div></div>
-  <div class="race-row"><div class="rl">🥉 CENTRAL</div><div class="rb"><div class="rf bg-green" style="width:61%">61%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">4. NORTH-1</div><div class="rb"><div class="rf bg-teal" style="width:51%">51%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">5. SOUTH-1</div><div class="rb"><div class="rf bg-blue" style="width:51%">51%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">6. NORTH-2</div><div class="rb"><div class="rf bg-orange" style="width:44%">44%</div></div><div class="rp">🎯</div></div>
-  <div class="race-row"><div class="rl">7. SOUTH-2</div><div class="rb"><div class="rf bg-red" style="width:37%">37%</div></div><div class="rp">⚠️</div></div>
-  <div class="race-row"><div class="rl">8. WEST-1</div><div class="rb"><div class="rf bg-red" style="width:31%">31%</div></div><div class="rp">🚨</div></div>
+<div class="race-list" id="raceMeFw">
+  <div class="race-row filterable" data-zone="EAST"><div class="rl">🥇 EAST</div><div class="rb"><div class="rf bg-fire" style="width:69%">69%</div></div><div class="rp">🔥</div></div>
+  <div class="race-row filterable" data-zone="WEST-2"><div class="rl">🥈 WEST-2</div><div class="rb"><div class="rf bg-orange" style="width:62%">62%</div></div><div class="rp">🚀</div></div>
+  <div class="race-row filterable" data-zone="CENTRAL"><div class="rl">🥉 CENTRAL</div><div class="rb"><div class="rf bg-green" style="width:61%">61%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="NORTH-1"><div class="rl">4. NORTH-1</div><div class="rb"><div class="rf bg-teal" style="width:51%">51%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="SOUTH-1"><div class="rl">5. SOUTH-1</div><div class="rb"><div class="rf bg-blue" style="width:51%">51%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="NORTH-2"><div class="rl">6. NORTH-2</div><div class="rb"><div class="rf bg-orange" style="width:44%">44%</div></div><div class="rp">🎯</div></div>
+  <div class="race-row filterable" data-zone="SOUTH-2"><div class="rl">7. SOUTH-2</div><div class="rb"><div class="rf bg-red" style="width:37%">37%</div></div><div class="rp">⚠️</div></div>
+  <div class="race-row filterable" data-zone="WEST-1"><div class="rl">8. WEST-1</div><div class="rb"><div class="rf bg-red" style="width:31%">31%</div></div><div class="rp">🚨</div></div>
   <div class="race-row" style="margin-top:6px;padding-top:8px;border-top:2px dashed #ff6a00"><div class="rl" style="color:#ff6a00">🏆 INDIA</div><div class="rb"><div class="rf bg-gold" style="width:50%">50%</div></div><div class="rp">🔥</div></div>
 </div>
 
-
-<!-- ████ PART 2: EMERGING BRAND SEC ████ -->
+<!-- ████ EMERGING BRAND SEC ████ -->
 
 <div class="mega-divider"><div class="md-badge">🌟 EMERGING BRAND SEC — NET VALUE 🌟</div></div>
 
-<div class="sec-head sec-head-green"><span class="sec-emoji">🏆</span><h2>Hall of Fame — Emerging Brand Zone Champions</h2><span class="sec-tag">EB Growth Leaders</span></div>
+<div class="sec-head sec-head-green"><span class="sec-emoji">🏆</span><h2>Hall of Fame — EB Zone Champions</h2><span class="sec-tag">EB Growth Leaders</span></div>
 <div class="hof-row">
-  <div class="hof-card hof-green-1"><div class="hof-crown">👑</div><div class="hof-medal">🥇</div><div class="hof-rank">EB Champion</div><div class="hof-name">EAST</div><div class="hof-ach">83%</div><div class="hof-detail">QTD: 241.8 | Target: 291 | BTG: 50<br>SB 177% 🏆 + NB 79% dominating!</div></div>
-  <div class="hof-card hof-green-2"><div class="hof-medal">🥈</div><div class="hof-rank">Runner Up</div><div class="hof-name">WEST-2</div><div class="hof-ach">77%</div><div class="hof-detail">QTD: 595.1 | Target: 776 | BTG: 181<br>CMH 94% 🔥 + SMH 72% firing!</div></div>
-  <div class="hof-card hof-green-3"><div class="hof-medal">🥉</div><div class="hof-rank">3rd Place</div><div class="hof-name">NORTH-1</div><div class="hof-ach">65%</div><div class="hof-detail">QTD: 523.8 | Target: 800 | BTG: 276<br>DEL2 78% EB volume king!</div></div>
+  <div class="hof-card hof-green-1 filterable" data-zone="EAST"><div class="hof-crown">👑</div><div class="hof-medal">🥇</div><div class="hof-rank">EB Champion</div><div class="hof-name">EAST</div><div class="hof-ach">83%</div><div class="hof-detail">QTD: 241.8 | TGT: 291 | BTG: 50<br>SB 177% 🏆 + NB 79%!</div></div>
+  <div class="hof-card hof-green-2 filterable" data-zone="WEST-2"><div class="hof-medal">🥈</div><div class="hof-rank">Runner Up</div><div class="hof-name">WEST-2</div><div class="hof-ach">77%</div><div class="hof-detail">QTD: 595.1 | TGT: 776 | BTG: 181<br>CMH 94% 🔥 + SMH 72%!</div></div>
+  <div class="hof-card hof-green-3 filterable" data-zone="NORTH-1"><div class="hof-medal">🥉</div><div class="hof-rank">3rd Place</div><div class="hof-name">NORTH-1</div><div class="hof-ach">65%</div><div class="hof-detail">QTD: 523.8 | TGT: 800 | BTG: 276<br>DEL2 78% EB volume king!</div></div>
 </div>
 
 <!-- EB TABLE -->
-<div class="sec-head sec-head-green"><span class="sec-emoji">📊</span><h2>ASM-Level Performance — Emerging Brand Sec</h2><span class="sec-tag">Net Value Tracker</span></div>
+<div class="sec-head sec-head-green"><span class="sec-emoji">📊</span><h2>ASM-Level — Emerging Brand Sec</h2><span class="sec-tag">Net Value Tracker</span></div>
 <div class="tbl-wrap">
-<table class="tbl tbl-eb">
+<table class="tbl tbl-eb" id="tblEb">
 <thead><tr><th>Region / ASM</th><th>QTR TGT</th><th>Apr-26</th><th>May-26</th><th>QTD</th><th>Ach%</th><th>BTG</th><th>🌟</th></tr></thead>
 <tbody>
-  <tr><td>🟢 DEL1</td><td>145</td><td>38.9</td><td>35.2</td><td>74.1</td><td class="md">51%</td><td>71</td><td>📈</td></tr>
-  <tr><td>🟢 DEL2</td><td>435</td><td>155.9</td><td>182.4</td><td>338.3</td><td class="hi">78%</td><td>97</td><td>🚀</td></tr>
-  <tr><td>🟢 UK/UPNCR</td><td>120</td><td>38.3</td><td>39.5</td><td>77.7</td><td class="hi">65%</td><td>42</td><td>📈</td></tr>
-  <tr><td>🟢 WUP</td><td>100</td><td>16.1</td><td>17.6</td><td>33.7</td><td class="lo">34%</td><td>66</td><td>⚠️</td></tr>
-  <tr class="zone-row"><td>🟢 NORTH-1 TOTAL</td><td>800</td><td>249.2</td><td>274.6</td><td>523.8</td><td>65%</td><td>276</td><td>🔥</td></tr>
+  <tr data-zone="NORTH-1"><td>🟢 DEL1</td><td>145</td><td>38.9</td><td>35.2</td><td>74.1</td><td class="md">51%</td><td>71</td><td>📈</td></tr>
+  <tr data-zone="NORTH-1"><td>🟢 DEL2</td><td>435</td><td>155.9</td><td>182.4</td><td>338.3</td><td class="hi">78%</td><td>97</td><td>🚀</td></tr>
+  <tr data-zone="NORTH-1"><td>🟢 UK/UPNCR</td><td>120</td><td>38.3</td><td>39.5</td><td>77.7</td><td class="hi">65%</td><td>42</td><td>📈</td></tr>
+  <tr data-zone="NORTH-1"><td>🟢 WUP</td><td>100</td><td>16.1</td><td>17.6</td><td>33.7</td><td class="lo">34%</td><td>66</td><td>⚠️</td></tr>
+  <tr class="zone-row" data-zone="NORTH-1"><td>🟢 NORTH-1 TOTAL</td><td>800</td><td>249.2</td><td>274.6</td><td>523.8</td><td>65%</td><td>276</td><td>🔥</td></tr>
 
-  <tr><td>🟢 HP/JK</td><td>177</td><td>63.1</td><td>58.1</td><td>121.1</td><td class="hi">68%</td><td>56</td><td>📈</td></tr>
-  <tr><td>🟢 PUN/ROH</td><td>366</td><td>92.2</td><td>96.5</td><td>188.7</td><td class="md">52%</td><td>178</td><td>📈</td></tr>
-  <tr><td>🟢 RAJ</td><td>257</td><td>51.2</td><td>73.7</td><td>124.9</td><td class="md">49%</td><td>132</td><td>🎯</td></tr>
-  <tr class="zone-row"><td>🟢 NORTH-2 TOTAL</td><td>800</td><td>206.5</td><td>228.3</td><td>434.8</td><td>54%</td><td>365</td><td>📈</td></tr>
+  <tr data-zone="NORTH-2"><td>🟢 HP/JK</td><td>177</td><td>63.1</td><td>58.1</td><td>121.1</td><td class="hi">68%</td><td>56</td><td>📈</td></tr>
+  <tr data-zone="NORTH-2"><td>🟢 PUN/ROH</td><td>366</td><td>92.2</td><td>96.5</td><td>188.7</td><td class="md">52%</td><td>178</td><td>📈</td></tr>
+  <tr data-zone="NORTH-2"><td>🟢 RAJ</td><td>257</td><td>51.2</td><td>73.7</td><td>124.9</td><td class="md">49%</td><td>132</td><td>🎯</td></tr>
+  <tr class="zone-row" data-zone="NORTH-2"><td>🟢 NORTH-2 TOTAL</td><td>800</td><td>206.5</td><td>228.3</td><td>434.8</td><td>54%</td><td>365</td><td>📈</td></tr>
 
-  <tr><td>🟢 BIH</td><td>102</td><td>30.4</td><td>29.3</td><td>59.7</td><td class="md">59%</td><td>42</td><td>📈</td></tr>
-  <tr><td>🟢 CUP</td><td>213</td><td>41.0</td><td>44.7</td><td>85.7</td><td class="md">40%</td><td>127</td><td>🎯</td></tr>
-  <tr><td>🟢 EUP</td><td>240</td><td>64.0</td><td>58.3</td><td>122.3</td><td class="md">51%</td><td>118</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟢 CENTRAL TOTAL</td><td>555</td><td>135.5</td><td>132.3</td><td>267.7</td><td>48%</td><td>287</td><td>🎯</td></tr>
+  <tr data-zone="CENTRAL"><td>🟢 BIH</td><td>102</td><td>30.4</td><td>29.3</td><td>59.7</td><td class="md">59%</td><td>42</td><td>📈</td></tr>
+  <tr data-zone="CENTRAL"><td>🟢 CUP</td><td>213</td><td>41.0</td><td>44.7</td><td>85.7</td><td class="md">40%</td><td>127</td><td>🎯</td></tr>
+  <tr data-zone="CENTRAL"><td>🟢 EUP</td><td>240</td><td>64.0</td><td>58.3</td><td>122.3</td><td class="md">51%</td><td>118</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="CENTRAL"><td>🟢 CENTRAL TOTAL</td><td>555</td><td>135.5</td><td>132.3</td><td>267.7</td><td>48%</td><td>287</td><td>🎯</td></tr>
 
-  <tr><td>🟢 GUJ</td><td>197</td><td>75.8</td><td>32.9</td><td>108.6</td><td class="md">55%</td><td>88</td><td>📈</td></tr>
-  <tr><td>🟢 MUM</td><td>403</td><td>167.8</td><td>51.5</td><td>219.3</td><td class="md">54%</td><td>184</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟢 WEST-1 TOTAL</td><td>600</td><td>243.6</td><td>84.4</td><td>327.9</td><td>55%</td><td>272</td><td>📈</td></tr>
+  <tr data-zone="WEST-1"><td>🟢 GUJ</td><td>197</td><td>75.8</td><td>32.9</td><td>108.6</td><td class="md">55%</td><td>88</td><td>📈</td></tr>
+  <tr data-zone="WEST-1"><td>🟢 MUM</td><td>403</td><td>167.8</td><td>51.5</td><td>219.3</td><td class="md">54%</td><td>184</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="WEST-1"><td>🟢 WEST-1 TOTAL</td><td>600</td><td>243.6</td><td>84.4</td><td>327.9</td><td>55%</td><td>272</td><td>📈</td></tr>
 
-  <tr><td>🟢 CG</td><td>56</td><td>12.4</td><td>25.9</td><td>38.3</td><td class="hi">68%</td><td>18</td><td>📈</td></tr>
-  <tr><td>🟢 CMH</td><td>286</td><td>158.4</td><td>111.7</td><td>270.0</td><td class="hi">94%</td><td>16</td><td>🚀🔥</td></tr>
-  <tr><td>🟢 MP</td><td>174</td><td>61.4</td><td>39.3</td><td>100.7</td><td class="md">58%</td><td>73</td><td>📈</td></tr>
-  <tr><td>🟢 SMH</td><td>260</td><td>92.3</td><td>93.7</td><td>186.1</td><td class="hi">72%</td><td>74</td><td>🚀</td></tr>
-  <tr class="zone-row"><td>🟢 WEST-2 TOTAL</td><td>776</td><td>324.5</td><td>270.6</td><td>595.1</td><td>77%</td><td>181</td><td>🔥🔥</td></tr>
+  <tr data-zone="WEST-2"><td>🟢 CG</td><td>56</td><td>12.4</td><td>25.9</td><td>38.3</td><td class="hi">68%</td><td>18</td><td>📈</td></tr>
+  <tr data-zone="WEST-2"><td>🟢 CMH</td><td>286</td><td>158.4</td><td>111.7</td><td>270.0</td><td class="hi">94%</td><td>16</td><td>🚀🔥</td></tr>
+  <tr data-zone="WEST-2"><td>🟢 MP</td><td>174</td><td>61.4</td><td>39.3</td><td>100.7</td><td class="md">58%</td><td>73</td><td>📈</td></tr>
+  <tr data-zone="WEST-2"><td>🟢 SMH</td><td>260</td><td>92.3</td><td>93.7</td><td>186.1</td><td class="hi">72%</td><td>74</td><td>🚀</td></tr>
+  <tr class="zone-row" data-zone="WEST-2"><td>🟢 WEST-2 TOTAL</td><td>776</td><td>324.5</td><td>270.6</td><td>595.1</td><td>77%</td><td>181</td><td>🔥🔥</td></tr>
 
-  <tr><td>🟢 APT</td><td>60</td><td>21.0</td><td>18.3</td><td>39.3</td><td class="hi">66%</td><td>20</td><td>📈</td></tr>
-  <tr><td>🟢 KA</td><td>240</td><td>91.7</td><td>61.4</td><td>153.1</td><td class="hi">64%</td><td>87</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟢 SOUTH-1 TOTAL</td><td>300</td><td>112.8</td><td>79.6</td><td>192.4</td><td>64%</td><td>108</td><td>🔥</td></tr>
+  <tr data-zone="SOUTH-1"><td>🟢 APT</td><td>60</td><td>21.0</td><td>18.3</td><td>39.3</td><td class="hi">66%</td><td>20</td><td>📈</td></tr>
+  <tr data-zone="SOUTH-1"><td>🟢 KA</td><td>240</td><td>91.7</td><td>61.4</td><td>153.1</td><td class="hi">64%</td><td>87</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="SOUTH-1"><td>🟢 SOUTH-1 TOTAL</td><td>300</td><td>112.8</td><td>79.6</td><td>192.4</td><td>64%</td><td>108</td><td>🔥</td></tr>
 
-  <tr><td>🟢 KER</td><td>364</td><td>98.9</td><td>71.3</td><td>170.2</td><td class="md">47%</td><td>194</td><td>🎯</td></tr>
-  <tr><td>🟢 TN</td><td>156</td><td>51.7</td><td>38.2</td><td>89.9</td><td class="md">58%</td><td>66</td><td>📈</td></tr>
-  <tr class="zone-row"><td>🟢 SOUTH-2 TOTAL</td><td>520</td><td>150.6</td><td>109.6</td><td>260.1</td><td>50%</td><td>260</td><td>📈</td></tr>
+  <tr data-zone="SOUTH-2"><td>🟢 KER</td><td>364</td><td>98.9</td><td>71.3</td><td>170.2</td><td class="md">47%</td><td>194</td><td>🎯</td></tr>
+  <tr data-zone="SOUTH-2"><td>🟢 TN</td><td>156</td><td>51.7</td><td>38.2</td><td>89.9</td><td class="md">58%</td><td>66</td><td>📈</td></tr>
+  <tr class="zone-row" data-zone="SOUTH-2"><td>🟢 SOUTH-2 TOTAL</td><td>520</td><td>150.6</td><td>109.6</td><td>260.1</td><td>50%</td><td>260</td><td>📈</td></tr>
 
-  <tr><td>🟢 JH/OD</td><td>63</td><td>14.1</td><td>19.9</td><td>33.9</td><td class="md">54%</td><td>29</td><td>📈</td></tr>
-  <tr><td>🟢 NB</td><td>81</td><td>29.9</td><td>34.5</td><td>64.3</td><td class="hi">79%</td><td>17</td><td>🚀</td></tr>
-  <tr><td>🟢 NESA</td><td>89</td><td>31.0</td><td>8.7</td><td>39.7</td><td class="md">45%</td><td>49</td><td>🎯</td></tr>
-  <tr><td>🟢 SB</td><td>59</td><td>72.7</td><td>31.1</td><td>103.8</td><td class="crossed">177%</td><td>-45 ✅</td><td>🏆👑</td></tr>
-  <tr class="zone-row"><td>🟢 EAST TOTAL</td><td>291</td><td>147.7</td><td>94.1</td><td>241.8</td><td>83%</td><td>50</td><td>🔥🔥</td></tr>
+  <tr data-zone="EAST"><td>🟢 JH/OD</td><td>63</td><td>14.1</td><td>19.9</td><td>33.9</td><td class="md">54%</td><td>29</td><td>📈</td></tr>
+  <tr data-zone="EAST"><td>🟢 NB</td><td>81</td><td>29.9</td><td>34.5</td><td>64.3</td><td class="hi">79%</td><td>17</td><td>🚀</td></tr>
+  <tr data-zone="EAST"><td>🟢 NESA</td><td>89</td><td>31.0</td><td>8.7</td><td>39.7</td><td class="md">45%</td><td>49</td><td>🎯</td></tr>
+  <tr data-zone="EAST"><td>🟢 SB</td><td>59</td><td>72.7</td><td>31.1</td><td>103.8</td><td class="crossed">177%</td><td>-45 ✅</td><td>🏆👑</td></tr>
+  <tr class="zone-row" data-zone="EAST"><td>🟢 EAST TOTAL</td><td>291</td><td>147.7</td><td>94.1</td><td>241.8</td><td>83%</td><td>50</td><td>🔥🔥</td></tr>
 
-  <tr class="grand-row"><td>🏆 GRAND TOTAL (EB)</td><td>4,643</td><td>1,570.3</td><td>1,273.5</td><td>2,843.7</td><td>61%</td><td>1,799</td><td>🔥🔥</td></tr>
+  <tr class="grand-row" data-zone="GRAND"><td>🏆 GRAND TOTAL (EB)</td><td>4,643</td><td>1,570.3</td><td>1,273.5</td><td>2,843.7</td><td>61%</td><td>1,799</td><td>🔥🔥</td></tr>
 </tbody>
 </table>
 </div>
@@ -354,36 +374,36 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 <!-- EB WARRIORS -->
 <div class="sec-head sec-head-green"><span class="sec-emoji">⚔️</span><h2>Top Warriors — Emerging Brand</h2><span class="sec-tag">Growth Heroes</span></div>
 <div class="war-grid">
-  <div class="war-card war-card-eb"><div class="we">👑</div><div class="wi"><div class="wn">SB</div><div class="ws">EAST · 177% — ABSOLUTE LEGEND!</div></div><div class="wa">177%</div></div>
-  <div class="war-card war-card-eb"><div class="we">🔥</div><div class="wi"><div class="wn">CMH</div><div class="ws">WEST-2 · 94% — BTG just 16!</div></div><div class="wa">94%</div></div>
-  <div class="war-card war-card-eb"><div class="we">🚀</div><div class="wi"><div class="wn">NB</div><div class="ws">EAST · 79% — BTG only 17!</div></div><div class="wa">79%</div></div>
-  <div class="war-card war-card-eb"><div class="we">⚡</div><div class="wi"><div class="wn">DEL2</div><div class="ws">NORTH-1 · QTD 338.3 — volume king!</div></div><div class="wa">78%</div></div>
-  <div class="war-card war-card-eb"><div class="we">💪</div><div class="wi"><div class="wn">SMH</div><div class="ws">WEST-2 · 72% — major jump!</div></div><div class="wa">72%</div></div>
-  <div class="war-card war-card-eb"><div class="we">📈</div><div class="wi"><div class="wn">HP/JK</div><div class="ws">NORTH-2 · 68% — consistent!</div></div><div class="wa">68%</div></div>
+  <div class="war-card war-card-eb filterable" data-zone="EAST"><div class="we">👑</div><div class="wi"><div class="wn">SB</div><div class="ws">EAST · 177% LEGEND!</div></div><div class="wa">177%</div></div>
+  <div class="war-card war-card-eb filterable" data-zone="WEST-2"><div class="we">🔥</div><div class="wi"><div class="wn">CMH</div><div class="ws">WEST-2 · 94% BTG 16!</div></div><div class="wa">94%</div></div>
+  <div class="war-card war-card-eb filterable" data-zone="EAST"><div class="we">🚀</div><div class="wi"><div class="wn">NB</div><div class="ws">EAST · 79% BTG 17!</div></div><div class="wa">79%</div></div>
+  <div class="war-card war-card-eb filterable" data-zone="NORTH-1"><div class="we">⚡</div><div class="wi"><div class="wn">DEL2</div><div class="ws">NORTH-1 · QTD 338!</div></div><div class="wa">78%</div></div>
+  <div class="war-card war-card-eb filterable" data-zone="WEST-2"><div class="we">💪</div><div class="wi"><div class="wn">SMH</div><div class="ws">WEST-2 · 72% jump!</div></div><div class="wa">72%</div></div>
+  <div class="war-card war-card-eb filterable" data-zone="NORTH-2"><div class="we">📈</div><div class="wi"><div class="wn">HP/JK</div><div class="ws">NORTH-2 · 68% consistent!</div></div><div class="wa">68%</div></div>
 </div>
 
 <!-- EB ALERTS -->
 <div class="sec-head"><span class="sec-emoji">🚨</span><h2>Need Acceleration — Emerging Brand</h2><span class="sec-tag">Red Alert EB</span></div>
 <div class="alert-grid">
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">WUP</div><div class="as">NORTH-1 · TGT 100, Ach only 34%</div></div><div class="aa">34%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">CUP</div><div class="as">CENTRAL · TGT 213, Ach 40%</div></div><div class="aa">40%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">NESA</div><div class="as">EAST · TGT 89, Ach 45%</div></div><div class="aa">45%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">KER</div><div class="as">SOUTH-2 · TGT 364, BTG 194</div></div><div class="aa">47%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">CENTRAL Zone</div><div class="as">Lowest zone at 48% — needs push</div></div><div class="aa">48%</div></div>
-  <div class="alert-card"><div class="ae">⚠️</div><div class="ai"><div class="an">RAJ</div><div class="as">NORTH-2 · TGT 257, Ach 49%</div></div><div class="aa">49%</div></div>
+  <div class="alert-card filterable" data-zone="NORTH-1"><div class="ae">⚠️</div><div class="ai"><div class="an">WUP</div><div class="as">NORTH-1 · TGT 100, Ach 34%</div></div><div class="aa">34%</div></div>
+  <div class="alert-card filterable" data-zone="CENTRAL"><div class="ae">⚠️</div><div class="ai"><div class="an">CUP</div><div class="as">CENTRAL · TGT 213, Ach 40%</div></div><div class="aa">40%</div></div>
+  <div class="alert-card filterable" data-zone="EAST"><div class="ae">⚠️</div><div class="ai"><div class="an">NESA</div><div class="as">EAST · TGT 89, Ach 45%</div></div><div class="aa">45%</div></div>
+  <div class="alert-card filterable" data-zone="SOUTH-2"><div class="ae">⚠️</div><div class="ai"><div class="an">KER</div><div class="as">SOUTH-2 · TGT 364, BTG 194</div></div><div class="aa">47%</div></div>
+  <div class="alert-card filterable" data-zone="CENTRAL"><div class="ae">⚠️</div><div class="ai"><div class="an">CENTRAL Zone</div><div class="as">Lowest zone at 48%</div></div><div class="aa">48%</div></div>
+  <div class="alert-card filterable" data-zone="NORTH-2"><div class="ae">⚠️</div><div class="ai"><div class="an">RAJ</div><div class="as">NORTH-2 · TGT 257, Ach 49%</div></div><div class="aa">49%</div></div>
 </div>
 
 <!-- EB RACE -->
-<div class="sec-head sec-head-green"><span class="sec-emoji">🏁</span><h2>Race to Finish — Emerging Brand Zones</h2><span class="sec-tag">Growth Sprint</span></div>
-<div class="race-list">
-  <div class="race-row"><div class="rl">🥇 EAST</div><div class="rb"><div class="rf bg-dgreen" style="width:83%">83%</div></div><div class="rp">🔥</div></div>
-  <div class="race-row"><div class="rl">🥈 WEST-2</div><div class="rb"><div class="rf bg-dgreen" style="width:77%">77%</div></div><div class="rp">🚀</div></div>
-  <div class="race-row"><div class="rl">🥉 NORTH-1</div><div class="rb"><div class="rf bg-green" style="width:65%">65%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">4. SOUTH-1</div><div class="rb"><div class="rf bg-lime" style="width:64%">64%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">5. WEST-1</div><div class="rb"><div class="rf bg-teal" style="width:55%">55%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">6. NORTH-2</div><div class="rb"><div class="rf bg-orange" style="width:54%">54%</div></div><div class="rp">📈</div></div>
-  <div class="race-row"><div class="rl">7. SOUTH-2</div><div class="rb"><div class="rf bg-orange" style="width:50%">50%</div></div><div class="rp">🎯</div></div>
-  <div class="race-row"><div class="rl">8. CENTRAL</div><div class="rb"><div class="rf bg-red" style="width:48%">48%</div></div><div class="rp">⚠️</div></div>
+<div class="sec-head sec-head-green"><span class="sec-emoji">🏁</span><h2>Race to Finish — EB Zones</h2><span class="sec-tag">Growth Sprint</span></div>
+<div class="race-list" id="raceEb">
+  <div class="race-row filterable" data-zone="EAST"><div class="rl">🥇 EAST</div><div class="rb"><div class="rf bg-dgreen" style="width:83%">83%</div></div><div class="rp">🔥</div></div>
+  <div class="race-row filterable" data-zone="WEST-2"><div class="rl">🥈 WEST-2</div><div class="rb"><div class="rf bg-dgreen" style="width:77%">77%</div></div><div class="rp">🚀</div></div>
+  <div class="race-row filterable" data-zone="NORTH-1"><div class="rl">🥉 NORTH-1</div><div class="rb"><div class="rf bg-green" style="width:65%">65%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="SOUTH-1"><div class="rl">4. SOUTH-1</div><div class="rb"><div class="rf bg-lime" style="width:64%">64%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="WEST-1"><div class="rl">5. WEST-1</div><div class="rb"><div class="rf bg-teal" style="width:55%">55%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="NORTH-2"><div class="rl">6. NORTH-2</div><div class="rb"><div class="rf bg-orange" style="width:54%">54%</div></div><div class="rp">📈</div></div>
+  <div class="race-row filterable" data-zone="SOUTH-2"><div class="rl">7. SOUTH-2</div><div class="rb"><div class="rf bg-orange" style="width:50%">50%</div></div><div class="rp">🎯</div></div>
+  <div class="race-row filterable" data-zone="CENTRAL"><div class="rl">8. CENTRAL</div><div class="rb"><div class="rf bg-red" style="width:48%">48%</div></div><div class="rp">⚠️</div></div>
   <div class="race-row" style="margin-top:6px;padding-top:8px;border-top:2px dashed #2e7d32"><div class="rl" style="color:#2e7d32">🏆 INDIA EB</div><div class="rb"><div class="rf bg-dgreen" style="width:61%">61%</div></div><div class="rp">🔥</div></div>
 </div>
 
@@ -393,19 +413,50 @@ body{background:#fff;color:#1a1a2e;font-family:'Barlow',sans-serif;min-height:10
 <div class="closing">
   <div class="cl-big">🔥 MOMENTUM IS UNSTOPPABLE — HISTORY IS BEING MADE! 🔥</div>
   <div class="cl-sub">
-    🏆 3 CHAMPIONS have crossed 100% ME FW: SB (122%) + UK/UPNCR (117%) + CMH (103%)!<br>
-    🌟 SB hits 177% EB — LEGENDARY performance!<br>
-    📈 All-India ME FW at 50% — HALFWAY MARK CROSSED!<br>
-    💚 All-India EB at 61% — STRONG MOMENTUM!<br>
-    <strong>WUP at 81%, BIH at 80% — WHO'S NEXT TO JOIN THE 100% CLUB?</strong>
+    🏆 3 CHAMPIONS crossed 100% ME FW: SB (122%) + UK/UPNCR (117%) + CMH (103%)!<br>
+    🌟 SB hits 177% EB — LEGENDARY! CMH EB at 94% — knocking on 100%!<br>
+    📈 India ME FW at 50% — HALFWAY! EB at 61% — STRONG!<br>
+    <strong>WUP 81%, BIH 80% — WHO'S NEXT IN THE 100% CLUB?</strong>
   </div>
   <div class="cl-punch">💥 THE 100% CLUB IS GROWING — WILL YOUR NAME BE NEXT? 💥</div>
-  <div class="cl-sub" style="margin-top:12px;font-size:14px">
-    Every order. Every call. Every shelf. It ALL counts.<br>
-    The scoreboard is LIVE. The nation is watching. BE A DHURANDHAR! 🏹
-  </div>
+  <div class="cl-sub" style="margin-top:10px;font-size:13px">📅 Updated Till: 29 May 2026 | Every order counts. BE A DHURANDHAR! 🏹</div>
   <div class="cl-hash">#DhurandharWarriors · #BattleForLeadership · #100PercentClub · #ChampionsInAction</div>
 </div>
+
+<script>
+function filterZone(zone, btn) {
+  // Update button states
+  document.querySelectorAll('.slicer-btn').forEach(b => {
+    b.classList.remove('active','active-green');
+  });
+  btn.classList.add('active');
+
+  // Filter table rows
+  const tables = [document.getElementById('tblMeFw'), document.getElementById('tblEb')];
+  tables.forEach(tbl => {
+    tbl.querySelectorAll('tbody tr').forEach(row => {
+      const rz = row.getAttribute('data-zone');
+      if (zone === 'ALL' || rz === zone || rz === 'GRAND') {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+
+  // Filter cards, alerts, race bars
+  document.querySelectorAll('.filterable').forEach(el => {
+    const ez = el.getAttribute('data-zone');
+    if (zone === 'ALL') {
+      el.classList.remove('dim');
+    } else if (ez === zone) {
+      el.classList.remove('dim');
+    } else {
+      el.classList.add('dim');
+    }
+  });
+}
+</script>
 
 </body>
 </html>
