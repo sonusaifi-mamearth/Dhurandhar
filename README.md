@@ -30,25 +30,6 @@ Live, mobile-first contest leaderboard for the **Q1 FY26-27 Dhurandhar Sales Con
 
 ---
 
-## 🔄 How To Update
-
-Each contest update is a **single-file replacement**:
-
-1. Open `index.html` in the GitHub web editor
-2. Find the two data blocks near the bottom of the `<script>`:
-   ```js
-   const FW = [ ... ];   // ME Face Wash | Sun
-   const EB = [ ... ];   // Emerging Brand
-   ```
-3. Each row is:
-   ```js
-   ["ZONE","ASM_CODE", tgt, apr, may, jun, qtd, ach%, btg]
-   ```
-4. Update the **"Updated Till"** stamp in the hero block
-5. Refresh the **ticker** spans with the new highlights (top performers, watch zones)
-6. Commit — Pages auto-deploys in ~60 seconds
-7. The Bitly shortlink stays the same, so no re-share needed
-
 > **Tip**: Zone subtotals and Grand Total are **computed live in JS** from row-level data — no need to manually update totals.
 
 ---
@@ -76,10 +57,10 @@ Dhurandhar/
 
 ---
 
-## 📞 9999820791
+## 📞 Owner
 
+**Maintained by :**
 
-**Maintained by **
 Sonu Saifi
 Sr. Channel Insights Analyst
 Honasa Consumer Limited
